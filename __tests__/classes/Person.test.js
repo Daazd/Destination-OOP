@@ -1,4 +1,5 @@
 const Person = require('../../classes/Person');
+const Bag = require('../../classes/Bag');
 
 describe('Person', () => {
     test('should return an instance of the Person class', () => {
@@ -19,7 +20,8 @@ describe('Person', () => {
 
     test('should use addBags() to add a bag to the bags array', () => {
         const person = new Person('Tom', 'Sawyer');
-        person.addBag('bag1');
-        expect(person.bag).toEqual(['bag1']);
+        const bag1 = new Bag(3, 'prada');
+        person.addBag(bag1);
+        expect(person.bag).toEqual([bag1]);
     });
 });

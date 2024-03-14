@@ -1,8 +1,9 @@
-const Bag = require('../Bag');
+const Bag = require('../../classes/Bag');
+const Person = require('../../classes/Person');
 
 test("instance created", () => {
-    const bag = new bag(3, 'prada')
-    expect(bag).instanceof(Bag)
+    const bag = new Bag(3, 'prada')
+    expect(bag).toBeInstanceOf(Bag)
 });
 
 test('weight and id', () => {
@@ -20,7 +21,7 @@ test('get initial owner', () => {
 
 test('assign owner to bag', () => {
     const bag = new Bag(3, 'prada')
-    const person = {}
+    const person = new Person('John Doe')
     bag.assignOwner(person)
     expect(bag.getOwner()).toBe(person)
 });
