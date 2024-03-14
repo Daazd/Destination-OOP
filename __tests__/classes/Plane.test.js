@@ -13,6 +13,6 @@ describe('Plane', () => {
         const plane = new Plane('Delta', 'LAX');
         const passenger = new Person('John Doe');
         plane.addPassenger(passenger);
-        expect(plane.getPassengers()).toEqual(passenger);
+        expect(plane.getPassengers()).toEqual([passenger]);
     });
 });
